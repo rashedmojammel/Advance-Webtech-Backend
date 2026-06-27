@@ -2,9 +2,10 @@ import {
   IsString,
   IsNotEmpty,
   IsNumber,
+  IsOptional,
   Min,
   Max,
-  IsOptional,
+  IsInt,
 } from 'class-validator';
 import { Type } from 'class-transformer';
 
@@ -22,7 +23,7 @@ export class CreateCourseDto {
   instructor: string;
 
   @Type(() => Number)
-  @IsNumber()
+  @IsInt()
   @Min(1)
   @Max(6)
   credits: number;
